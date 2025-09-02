@@ -4,7 +4,6 @@ import cors from "cors";
 
 import notesRoutes from "./routes/notesRoutes.js";
 import { connectDB } from "../src/config/db.js";
-import rateLimiter from "./middleware/rateLimiter.js";
 import path from "path";
 
 dotenv.config();
@@ -23,7 +22,6 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 app.use(express.json());
-app.use(rateLimiter);
 // app.use((req, res, next) => {
 //   console.log(`Request Method: ${req.method}, Request URL: ${req.url}`);
 //   next();
