@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import RateLimitedUI from "../components/RateLimitedUI";
 import axios from "axios";
 import toast from "react-hot-toast";
 import NoteDetailPage from "./NoteDetailPage";
@@ -10,7 +9,6 @@ import api from "../components/lib/axios";
 import NotesNotFound from "../components/NotesNotFound";
 
 const HomePage = () => {
-  const [isRatelimited, setisRatelimited] = useState(false);
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -38,7 +36,6 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      {isRatelimited && <RateLimitedUI />}
 
       <div className="mx-auto max-w-7xl p-4 mt-6">
         {loading && (
